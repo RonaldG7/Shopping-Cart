@@ -153,7 +153,7 @@ const span = document.getElementsByClassName("close")[0]!
 addProductBtn.onclick = () => {
     modal.style.display = "block";
 }
-
+// @ts-ignore
 span.onclick = function () {
     modal.style.display = "none";
 }
