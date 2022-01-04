@@ -108,36 +108,19 @@ const foodFilter = document.querySelector(".food");
 const electronicsFilter = document.querySelector(".electronics");
 const furnitureFilter = document.querySelector(".furniture");
 const showAllFilter = document.querySelector(".showAll");
-foodFilter.onclick = () => {
+function filter(category) {
     shopItems.innerHTML = "";
     for (const i in items) {
-        if (items[i].category === "food") {
+        if (items[i].category === category) {
             const arr = [];
             arr.push(items[i]);
             shopItemsList(arr);
         }
     }
-};
-electronicsFilter.onclick = () => {
-    shopItems.innerHTML = "";
-    for (const i in items) {
-        if (items[i].category === "electronics") {
-            const arr = [];
-            arr.push(items[i]);
-            shopItemsList(arr);
-        }
-    }
-};
-furnitureFilter.onclick = () => {
-    shopItems.innerHTML = "";
-    for (const i in items) {
-        if (items[i].category === "furniture") {
-            const arr = [];
-            arr.push(items[i]);
-            shopItemsList(arr);
-        }
-    }
-};
+}
+foodFilter.onclick = () => filter("food");
+electronicsFilter.onclick = () => filter("electronics");
+furnitureFilter.onclick = () => filter("furniture");
 showAllFilter.onclick = () => {
     shopItems.innerHTML = "";
     shopItemsList(items);
@@ -172,5 +155,8 @@ submit.onclick = () => {
         });
         shopItems.innerHTML = "";
         shopItemsList(items);
+    }
+    else {
+        alert("You are missing one of the parameters!");
     }
 };

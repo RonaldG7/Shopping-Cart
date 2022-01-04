@@ -122,10 +122,10 @@ const electronicsFilter: HTMLButtonElement = document.querySelector(".electronic
 const furnitureFilter: HTMLButtonElement = document.querySelector(".furniture")!
 const showAllFilter: HTMLButtonElement = document.querySelector(".showAll")!
 
-foodFilter.onclick = () => {
+function filter (category: string) {
     shopItems.innerHTML = ""
     for (const i in items) {
-        if (items[i].category === "food") {
+        if (items[i].category === category) {
             const arr = []
             arr.push(items[i])
             shopItemsList(arr)
@@ -133,27 +133,11 @@ foodFilter.onclick = () => {
     }
 }
 
-electronicsFilter.onclick = () => {
-    shopItems.innerHTML = ""
-    for (const i in items) {
-        if (items[i].category === "electronics") {
-            const arr = []
-            arr.push(items[i])
-            shopItemsList(arr)
-        }
-    }
-}
+foodFilter.onclick = () => filter("food")
 
-furnitureFilter.onclick = () => {
-    shopItems.innerHTML = ""
-    for (const i in items) {
-        if (items[i].category === "furniture") {
-            const arr = []
-            arr.push(items[i])
-            shopItemsList(arr)
-        }
-    }
-}
+electronicsFilter.onclick = () => filter("electronics")
+
+furnitureFilter.onclick = () => filter("furniture")
 
 showAllFilter.onclick = () => {
     shopItems.innerHTML = ""
@@ -197,6 +181,8 @@ submit.onclick = () => {
         })
         shopItems.innerHTML = ""
         shopItemsList(items)
+    } else {
+        alert("You are missing one of the parameters!")
     }
 }
 
