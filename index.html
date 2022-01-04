@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>3rd Of January</title>
+</head>
+<body>
+<div class="wrapper d-flex a-center spc-around">
+    <div class="shopCard">
+        <h2>SHOP</h2>
+        <div class="card">
+            <div class="filter d-flex spc-around">
+                <div class="food filter">Food</div>
+                <div class="electronics filter">Electronics</div>
+                <div class="furniture filter">Furniture</div>
+                <div class="showAll filter">Show All</div>
+            </div>
+            <div class="divider"></div>
+            <div class="shopItems p20">
+            </div>
+        </div>
+        <div class="addProduct d-flex a-center j-center">
+            <span>Add Product</span>
+        </div>
+    </div>
+    <div class="inventoryCard">
+        <h2>Inventory</h2>
+        <div class="d-flex spc-btw">
+            <h3 class="money">Money: 200</h3>
+            <h3 class="weightTitle">Weight Limit: 30</h3>
+        </div>
+        <div class="card p20">
+            <div class="inventoryItems">
+
+            </div>
+        </div>
+    </div>
+    <div class="newProductModal">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="d-flex column j-center">
+                    <input type="text" id="name" placeholder="Name...">
+                    <input type="text" id="photo" placeholder="Photo...">
+                    <input type="number" id="weight" placeholder="Weight...">
+                    <input type="number" id="price" placeholder="Price...">
+                    <select name="shop">
+                        <option value="food">Food</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="furniture">Furniture</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
